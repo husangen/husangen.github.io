@@ -19,12 +19,12 @@ export default defineConfig({
       { text: '前端', link: '/4-Web/概述.md' },
       { text: '后端',link: '/5-Java/概述.html' },
       { text: '基础', items: [
-        { text: '计算机组成原理', link: '/1-基础/一、计算机组成原理/概述.html' },
-        { text: '操作系统', link: '/1-基础/二、操作系统/概述.html' },
-        { text: '计算机网络', link: '/1-基础/三、计算机网络/概述.html' },
-        { text: '数据结构与算法', link: '/1-基础/四、数据结构与算法/概述.html' },
-        { text: '编译原理', link: '/1-基础/五、编译原理/概述.html' },
-        { text: '计算机图形学', link: '/1-基础/六、计算机图形学/概述.html' }
+        { text: '计算机组成原理', link: '/1-基础-1-计算机组成原理/概述.html' },
+        { text: '操作系统', link: '/1-基础-2-操作系统/概述.html' },
+        { text: '计算机网络', link: '/1-基础-3-网络系统/概述.html' },
+        { text: '数据结构与算法', link: '/1-基础-4-数据结构与算法/概述.html' },
+        { text: '编译原理', link: '/1-基础-5-编译原理/概述.html' },
+        { text: '计算机图形学', link: '/1-基础-6-图形学/概述.html' }
         ]
       }
     ],
