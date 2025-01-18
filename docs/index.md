@@ -4,8 +4,8 @@ layout: home
 
 hero:
   name: "Kevin 星球"
-  text: "记录知识,问题思考"
-  tagline: iOS, Flutter, Web, Java
+  text: "知识记录,问题思考"
+  tagline: iOS, Flutter, Web, Java ...
   actions:
     - theme: brand
       text: GitHub
