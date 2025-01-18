@@ -1,5 +1,7 @@
-import { defineConfig } from 'vitepress'
+import { DefaultTheme, defineConfig } from 'vitepress'
 import AutoSidebar from 'vite-plugin-vitepress-auto-sidebar';
+
+const chineseNumberOrder = ['概述','一', '二', '三', '四', '五', '六', '七', '八', '九', '十'];
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -13,18 +15,18 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: '基础', items: [
-        { text: '计算机组成原理', link: '/1-基础/1-计算机组成原理/1-A-概述.html' },
-        { text: '操作系统', link: '/1-基础/2-操作系统/1-A-概述.html' },
-        { text: '计算机网络', link: '/1-基础/3-计算机网络/1-A-概述.html' },
-        { text: '数据结构与算法', link: '/1-基础/4-数据结构与算法/1-A-概述.html' },
-        { text: '编译原理', link: '/1-基础/5-编译原理/1-A-概述.html' },
-        { text: '计算机图形学', link: '/1-基础/6-计算机图形学/1-A-概述.html' }
+        { text: '计算机组成原理', link: '/1-基础/一、计算机组成原理/概述.html' },
+        { text: '操作系统', link: '/1-基础/二、操作系统/概述.html' },
+        { text: '计算机网络', link: '/1-基础/三、计算机网络/概述.html' },
+        { text: '数据结构与算法', link: '/1-基础/四、数据结构与算法/概述.html' },
+        { text: '编译原理', link: '/1-基础/五、编译原理/概述.html' },
+        { text: '计算机图形学', link: '/1-基础/六、计算机图形学/概述.html' }
         ]
       },
-      { text: 'iOS', link: '/2-iOS/1-A-概述.html'},
-      { text: 'Flutter', link: '/3-Flutter/1-A-概述.md' },
-      { text: '前端', link: '/4-Web/1-A-概述.md' },
-      { text: '后端',link: '/5-Java/1-A-概述.html' },
+      { text: 'iOS', link: '/2-iOS/概述.html'},
+      { text: 'Flutter', link: '/3-Flutter/概述.md' },
+      { text: '前端', link: '/4-Web/概述.md' },
+      { text: '后端',link: '/5-Java/概述.html' },
     ],
 
     socialLinks: [
@@ -34,7 +36,9 @@ export default defineConfig({
     // 启用搜索  
     search: {
       provider: 'local'
-    }
+    },
+
+    outline: [4, 5]
   },
 
   vite: {
@@ -43,7 +47,35 @@ export default defineConfig({
       AutoSidebar({
         // 自动从文档内读取标题
         titleFromFile: true,
-        ignoreIndexItem: true
+        ignoreIndexItem: true,
+        collapsed: true,
+        beforeCreateSideBarItems: (items) => {
+          // 过滤出以中文数字开头的项目
+          let chineseNumberItems = items.filter(item => {
+              const text = item;
+              return chineseNumberOrder.some(num => text.startsWith(num));
+          });
+          //没找到，直接返回
+          if (chineseNumberItems.length <= 0) {
+            return items
+          }
+
+          // 过滤出不以中文数字开头的项目
+          let otherItems = items.filter(item => {
+              const text = item;
+              return!chineseNumberOrder.some(num => text.startsWith(num));
+          });
+
+          // 对以中文数字开头的项目进行排序
+          chineseNumberItems.sort((a, b) => {
+              const indexA = chineseNumberOrder.indexOf(a[0]);
+              const indexB = chineseNumberOrder.indexOf(b[0]);
+              return indexA - indexB;
+          });
+
+          // 将排序后的中文数字项目和其他项目重新组合
+          return [...chineseNumberItems,...otherItems];
+        }
       })
     ]
   },
