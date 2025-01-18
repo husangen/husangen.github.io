@@ -1,0 +1,1 @@
+import{_ as e,c as t,o as a}from"./chunks/framework.Dz7_3PEu.js";const m=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"4-Web/五、React/react.md","filePath":"4-Web/五、React/react.md"}'),c={name:"4-Web/五、React/react.md"};function r(o,s,n,p,_,d){return a(),t("div")}const f=e(c,[["render",r]]);export{m as __pageData,f as default};

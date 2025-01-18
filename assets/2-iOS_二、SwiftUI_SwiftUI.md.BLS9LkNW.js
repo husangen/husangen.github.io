@@ -1,0 +1,1 @@
+import{_ as t,c as e,o as a}from"./chunks/framework.Dz7_3PEu.js";const _=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"2-iOS/二、SwiftUI/SwiftUI.md","filePath":"2-iOS/二、SwiftUI/SwiftUI.md"}'),i={name:"2-iOS/二、SwiftUI/SwiftUI.md"};function r(o,s,c,f,n,p){return a(),e("div")}const d=t(i,[["render",r]]);export{_ as __pageData,d as default};

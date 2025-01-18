@@ -1,0 +1,1 @@
+import{_ as e,c as t,o as a}from"./chunks/framework.Dz7_3PEu.js";const m=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"1-基础-4-数据结构与算法/算法/4.回溯算法.md","filePath":"1-基础-4-数据结构与算法/算法/4.回溯算法.md"}'),r={name:"1-基础-4-数据结构与算法/算法/4.回溯算法.md"};function o(_,s,c,n,p,d){return a(),t("div")}const f=e(r,[["render",o]]);export{m as __pageData,f as default};
