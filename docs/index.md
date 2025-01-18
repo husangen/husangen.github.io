@@ -4,8 +4,8 @@ layout: home
 
 hero:
   name: "Kevin 星球"
-  text: "知识记录,问题思考"
-  tagline: iOS, Flutter, Web, Java ...
+  text: "求知 求思"
+  tagline: Stay hungry, Stay foolish
   actions:
     - theme: brand
       text: GitHub
